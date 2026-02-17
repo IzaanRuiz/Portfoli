@@ -3,52 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Izan Ruiz Pérez | Portfolio Profesional</title>
+    <title>Izan Ruiz Pérez | Systems & Networks</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome para iconos -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --primary-color: #0ea5e9;
-            --secondary-color: #64748b;
-            --bg-dark: #0f172a;
-            --bg-card: #1e293b;
-            --text-main: #f1f5f9;
-            --text-muted: #94a3b8;
-            --accent-gradient: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
+            --primary: #38bdf8;
+            --primary-dark: #0284c7;
+            --bg-body: #020617;
+            --bg-card: #0f172a;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --glass: rgba(30, 41, 59, 0.7);
+            --border: rgba(255, 255, 255, 0.1);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-dark);
+            background-color: var(--bg-body);
             color: var(--text-main);
             line-height: 1.6;
-            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* --- Fondo Animado --- */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.05) 0%, transparent 50%);
+            z-index: -1;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1.5rem;
         }
 
-        /* --- Header & Navigation --- */
-        nav {
+        /* --- Header --- */
+        header {
             position: sticky;
             top: 0;
-            background: rgba(15, 23, 42, 0.9);
-            backdrop-filter: blur(10px);
-            z-index: 100;
+            z-index: 1000;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
             padding: 1rem 0;
-            border-bottom: 1px solid #334155;
         }
 
         .nav-content {
@@ -57,367 +67,327 @@
             align-items: center;
         }
 
-        .lang-switcher button {
-            background: var(--bg-card);
+        .btn-lang {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
             color: var(--text-main);
-            border: 1px solid var(--primary-color);
             padding: 0.5rem 1rem;
+            border-radius: 50px;
             cursor: pointer;
-            border-radius: 6px;
             font-weight: 600;
-            transition: 0.3s;
+            transition: all 0.3s ease;
         }
 
-        .lang-switcher button:hover {
-            background: var(--primary-color);
+        .btn-lang:hover {
+            background: var(--primary);
+            color: var(--bg-body);
+            border-color: var(--primary);
         }
 
         /* --- Hero Section --- */
         .hero {
-            padding: 6rem 0 4rem;
+            padding: 5rem 0;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 3rem;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
         }
 
-        .hero-img {
-            width: 220px;
-            height: 220px;
-            border-radius: 24px;
+        .profile-container {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
             object-fit: cover;
-            border: 4px solid var(--primary-color);
-            box-shadow: 0 0 30px rgba(14, 165, 233, 0.3);
+            border: 4px solid var(--primary);
+            background: var(--bg-card);
+            animation: morph 8s ease-in-out infinite;
         }
 
-        .hero-text h1 {
+        @keyframes morph {
+            0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+            50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; }
+            100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+        }
+
+        .hero h1 {
             font-size: 3.5rem;
-            background: var(--accent-gradient);
+            font-weight: 800;
+            background: linear-gradient(to right, #fff, var(--primary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
 
-        .hero-text p {
+        .hero-tag {
+            color: var(--primary);
             font-size: 1.2rem;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
-        .contact-grid {
+        /* --- Cards & Grid --- */
+        .main-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            margin-bottom: 5rem;
         }
 
-        .contact-item {
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            border-radius: 24px;
+            height: fit-content;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(56, 189, 248, 0.3);
+        }
+
+        h2 {
             display: flex;
             align-items: center;
             gap: 0.75rem;
-            font-size: 0.9rem;
-            color: var(--text-main);
-            text-decoration: none;
-        }
-
-        .contact-item i {
-            color: var(--primary-color);
-        }
-
-        /* --- Sections --- */
-        section {
-            padding: 5rem 0;
-        }
-
-        h2.section-title {
-            font-size: 2rem;
-            margin-bottom: 3rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        h2.section-title::after {
-            content: "";
-            height: 1px;
-            flex-grow: 1;
-            background: #334155;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
         }
 
         /* --- Experience Timeline --- */
         .timeline {
-            border-left: 2px solid #334155;
-            padding-left: 2rem;
-            position: relative;
+            border-left: 2px solid var(--border);
+            padding-left: 1.5rem;
         }
 
         .timeline-item {
-            margin-bottom: 3rem;
             position: relative;
+            margin-bottom: 2.5rem;
         }
 
         .timeline-item::before {
             content: "";
             position: absolute;
-            left: calc(-2rem - 9px);
-            top: 5px;
-            width: 16px;
-            height: 16px;
-            background: var(--primary-color);
+            left: -1.5rem;
+            top: 0.5rem;
+            width: 12px; height: 12px;
+            background: var(--primary);
             border-radius: 50%;
-            border: 4px solid var(--bg-dark);
+            transform: translateX(-50%);
+            box-shadow: 0 0 15px var(--primary);
         }
 
-        .time-badge {
-            background: var(--bg-card);
-            padding: 0.2rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            color: var(--primary-color);
-            font-weight: 600;
+        .date {
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 700;
         }
 
-        .exp-card {
-            background: var(--bg-card);
-            padding: 1.5rem;
+        /* --- Skills Tags --- */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            padding: 0.5rem 1rem;
             border-radius: 12px;
-            margin-top: 1rem;
+            font-size: 0.9rem;
             transition: 0.3s;
         }
 
-        .exp-card:hover {
-            transform: translateY(-5px);
-            background: #2d3a4f;
-        }
-
-        .exp-card h3 { color: var(--text-main); }
-        .exp-card span { color: var(--secondary-color); font-size: 0.9rem; }
-
-        /* --- Skills & Knowledge --- */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 1rem;
-        }
-
-        .skill-tag {
-            background: var(--bg-card);
-            padding: 1rem;
-            border-radius: 8px;
-            text-align: center;
-            border: 1px solid #334155;
-            transition: 0.3s;
-        }
-
-        .skill-tag:hover {
-            border-color: var(--primary-color);
-            background: rgba(14, 165, 233, 0.1);
+        .tag:hover {
+            background: rgba(56, 189, 248, 0.1);
+            border-color: var(--primary);
         }
 
         /* --- Footer --- */
         footer {
             text-align: center;
             padding: 4rem 0;
-            border-top: 1px solid #334155;
-            color: var(--text-muted);
+            opacity: 0.5;
+            font-size: 0.9rem;
         }
 
-        /* --- Responsive --- */
-        @media (max-width: 768px) {
-            .hero { flex-direction: column; text-align: center; }
-            .hero-text h1 { font-size: 2.5rem; }
-            .contact-grid { justify-items: center; }
+        /* --- Animaciones --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Responsivo --- */
+        @media (max-width: 850px) {
+            .main-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <nav>
+    <header>
         <div class="container nav-content">
-            <div class="logo"><strong>IRP</strong></div>
-            <div class="lang-switcher">
-                <button onclick="changeLanguage('es')">ES</button>
-                <button onclick="changeLanguage('en')">EN</button>
+            <div style="font-weight: 800; font-size: 1.2rem; color: var(--primary);">IRP.</div>
+            <div>
+                <button class="btn-lang" onclick="setLanguage('es')">ES</button>
+                <button class="btn-lang" onclick="setLanguage('en')">EN</button>
             </div>
         </div>
-    </nav>
+    </header>
 
     <main class="container">
-        
-        <!-- Hero Section -->
+        <!-- Hero -->
         <section class="hero">
-            <img src="https://via.placeholder.com/220/1e293b/f1f5f9?text=Izan+Ruiz" alt="Izan Ruiz" class="hero-img">
-            <div class="hero-text">
-                <h1 id="name">Izan Ruiz Pérez</h1>
-                <p id="tagline">Estudiante de Administración de Sistemas Informáticos en Redes (ASIX)</p>
-                <div class="contact-grid">
-                    <a href="mailto:izanrpizan@gmail.com" class="contact-item">
-                        <i class="fas fa-envelope"></i> izanrpizan@gmail.com
-                    </a>
-                    <span class="contact-item"><i class="fas fa-phone"></i> 681 66 37 75</span>
-                    <span class="contact-item"><i class="fas fa-location-dot"></i> Tordera, Barcelona</span>
-                </div>
+            <div class="profile-container">
+                <img src="izan.png" alt="Izan Ruiz Pérez" class="profile-img">
+            </div>
+            <p class="hero-tag" data-i18n="tagline">Sistemas y Redes</p>
+            <h1>Izan Ruiz Pérez</h1>
+            <div class="tags">
+                <span class="tag"><i class="fas fa-envelope"></i> izanrpizan@gmail.com</span>
+                <span class="tag"><i class="fas fa-phone"></i> 681 66 37 75</span>
+                <span class="tag"><i class="fas fa-map-marker-alt"></i> Tordera, Barcelona</span>
             </div>
         </section>
 
-        <!-- Profile Section -->
-        <section id="profile">
-            <h2 class="section-title"><i class="fas fa-user"></i> <span data-i18n="profile_title">Perfil Profesional</span></h2>
-            <div class="exp-card">
-                <p data-i18n="profile_text">Soy una persona responsable y organizada con gran capacidad de aprendizaje. Actualmente enfocado en la administración de redes y sistemas, buscando oportunidades para aplicar mis conocimientos técnicos y crecer profesionalmente en entornos tecnológicos exigentes.</p>
-            </div>
-        </section>
+        <div class="main-grid">
+            <!-- Columna Izquierda (Info Corta) -->
+            <div class="left-col">
+                <section class="card" style="margin-bottom: 2rem;">
+                    <h2 data-i18n="about_title"><i class="fas fa-user-astronaut"></i> Sobre mí</h2>
+                    <p id="about-text" style="color: var(--text-dim);">
+                        Soy responsable y organizado. Mi objetivo es aprender continuamente y ganar experiencia sólida en el sector tecnológico.
+                    </p>
+                </section>
 
-        <!-- Work Experience -->
-        <section id="experience">
-            <h2 class="section-title"><i class="fas fa-briefcase"></i> <span data-i18n="exp_title">Experiencia Laboral</span></h2>
-            <div class="timeline">
-                
-                <div class="timeline-item">
-                    <span class="time-badge">2025 - 2026</span>
-                    <div class="exp-card">
-                        <h3>9DIGITZ</h3>
-                        <span data-i18n="exp_1">Técnico Informático - Tordera</span>
+                <section class="card" style="margin-bottom: 2rem;">
+                    <h2 data-i18n="skills_title"><i class="fas fa-microchip"></i> Stack Técnico</h2>
+                    <div class="tags">
+                        <span class="tag">Cisco Packet Tracer</span>
+                        <span class="tag">VirtualBox</span>
+                        <span class="tag">Docker/Sistemas</span>
+                        <span class="tag">VS Code</span>
+                        <span class="tag">PgAdmin (SQL)</span>
+                        <span class="tag">AppSheet</span>
+                        <span class="tag">WordPress</span>
                     </div>
-                </div>
+                </section>
 
-                <div class="timeline-item">
-                    <span class="time-badge">2025</span>
-                    <div class="exp-card">
-                        <h3>Massimo Dutti Logistica, S.A</h3>
-                        <span data-i18n="exp_2">Operaciones Logísticas</span>
+                <section class="card">
+                    <h2 data-i18n="other_title"><i class="fas fa-id-badge"></i> Otros</h2>
+                    <div class="timeline" style="border:none; padding:0;">
+                        <p><strong><i class="fas fa-car"></i></strong> Carnet B y A2</p>
+                        <p><strong><i class="fas fa-truck-loading"></i></strong> Carretillas (10t)</p>
+                        <p><br><strong data-i18n="lang_title">Idiomas:</strong></p>
+                        <p>Catalán (Nativo/C1) | Español (Nativo) | Inglés (Basic)</p>
                     </div>
-                </div>
+                </section>
+            </div>
 
-                <div class="timeline-item">
-                    <span class="time-badge">2024</span>
-                    <div class="exp-card">
-                        <h3>Bershka Logistica, S.A</h3>
-                        <span data-i18n="exp_3">Soporte Logístico</span>
+            <!-- Columna Derecha (Experiencia y Educación) -->
+            <div class="right-col">
+                <section class="card" style="margin-bottom: 2rem;">
+                    <h2 data-i18n="exp_title"><i class="fas fa-terminal"></i> Experiencia</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="date">11/2025 - 01/2026</span>
+                            <h3>9DIGITZ, Tordera</h3>
+                            <p data-i18n="exp_9digitz">Soporte Técnico y Mantenimiento.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="date">08/2025 - 09/2025</span>
+                            <h3>Massimo Dutti Logística</h3>
+                            <p data-i18n="exp_md">Operaciones y logística avanzada.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="date">07/2023</span>
+                            <h3>Erasmus+ Vitalis BMH (Alemania)</h3>
+                            <p data-i18n="exp_erasmus">Domótica, desarrollo Web HTML/CSS y entornos internacionales.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="date">2023</span>
+                            <h3>Taf Serveis Informàtica</h3>
+                            <p data-i18n="exp_taf">Servicios informáticos y redes.</p>
+                        </div>
                     </div>
-                </div>
+                </section>
 
-                <div class="timeline-item">
-                    <span class="time-badge">2023</span>
-                    <div class="exp-card">
-                        <h3 data-i18n="exp_erasmus_title">Erasmus+ | Vitalis BMH (Alemania)</h3>
-                        <p data-i18n="exp_erasmus_desc">Especialización en Domótica, desarrollo Web (HTML/CSS) y gestión de sistemas en entorno internacional.</p>
+                <section class="card">
+                    <h2 data-i18n="edu_title"><i class="fas fa-graduation-cap"></i> Formación</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="date">2024 - 2026</span>
+                            <h3 data-i18n="edu_asix">ASIX - Adm. de Sistemas en Red</h3>
+                            <p>Inst. Sa Palomera, Blanes.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="date">2022 - 2024</span>
+                            <h3 data-i18n="edu_smx">CFGM SMX - Sistemas y Redes</h3>
+                            <p>Inst. Lluís Companys, Tordera.</p>
+                        </div>
                     </div>
-                </div>
-
-                <div class="timeline-item">
-                    <span class="time-badge">2023</span>
-                    <div class="exp-card">
-                        <h3>Taf Serveis Informática</h3>
-                        <span data-i18n="exp_taf">Técnico de mantenimiento y sistemas</span>
-                    </div>
-                </div>
-
+                </section>
             </div>
-        </section>
-
-        <!-- Education -->
-        <section id="education">
-            <h2 class="section-title"><i class="fas fa-graduation-cap"></i> <span data-i18n="edu_title">Formación</span></h2>
-            <div class="skills-grid">
-                <div class="skill-tag">
-                    <strong data-i18n="edu_1">ASIX</strong>
-                    <p>Inst. Sa Palomera</p>
-                </div>
-                <div class="skill-tag">
-                    <strong data-i18n="edu_2">CFGM SMX</strong>
-                    <p>Inst. Lluis Companys</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills -->
-        <section id="skills">
-            <h2 class="section-title"><i class="fas fa-code"></i> <span data-i18n="skills_title">Stack Técnico</span></h2>
-            <div class="skills-grid">
-                <div class="skill-tag">Cisco Packet Tracer</div>
-                <div class="skill-tag">VirtualBox</div>
-                <div class="skill-tag">VS Code</div>
-                <div class="skill-tag">PgAdmin (SQL)</div>
-                <div class="skill-tag">WordPress</div>
-                <div class="skill-tag">AppSheet</div>
-                <div class="skill-tag">Microsoft Office</div>
-                <div class="skill-tag">HTML/CSS</div>
-            </div>
-        </section>
-
-        <!-- Languages & Others -->
-        <section id="other">
-            <h2 class="section-title"><i class="fas fa-id-card"></i> <span data-i18n="other_title">Otros Datos</span></h2>
-            <div class="skills-grid">
-                <div class="skill-tag" data-i18n="lang_cat">Catalán (C1/Nativo)</div>
-                <div class="skill-tag" data-i18n="lang_esp">Castellano (Nativo)</div>
-                <div class="skill-tag" data-i18n="lang_eng">Inglés (Básico)</div>
-                <div class="skill-tag"><i class="fas fa-car"></i> B / A2</div>
-                <div class="skill-tag" data-i18n="forklift">Carretillas (10t)</div>
-            </div>
-        </section>
-
+        </div>
     </main>
 
     <footer>
-        <p>© 2024 Izan Ruiz Pérez • Portfolio Profesional</p>
+        <p>© 2024 Izan Ruiz Pérez • Systems & Networks Portfolio</p>
     </footer>
 
     <script>
         const translations = {
             es: {
-                profile_title: "Perfil Profesional",
-                profile_text: "Soy una persona responsable y organizada con gran capacidad de aprendizaje. Actualmente enfocado en la administración de redes y sistemas, buscando oportunidades para aplicar mis conocimientos técnicos y crecer profesionalmente en entornos tecnológicos exigentes.",
-                exp_title: "Experiencia Laboral",
-                exp_1: "Técnico Informático - Tordera",
-                exp_2: "Operaciones Logísticas",
-                exp_3: "Soporte Logístico",
-                exp_erasmus_title: "Erasmus+ | Vitalis BMH (Alemania)",
-                exp_erasmus_desc: "Especialización en Domótica, desarrollo Web (HTML/CSS) y gestión de sistemas en entorno internacional.",
-                exp_taf: "Técnico de mantenimiento y sistemas",
-                edu_title: "Formación",
-                edu_1: "ASIX (En curso)",
-                edu_2: "CFGM Sistemas y Redes",
+                tagline: "Sistemas y Redes",
+                about_title: "Sobre mí",
+                about_text: "Soy responsable y organizado. Mi objetivo es aprender continuamente y ganar experiencia sólida en el sector tecnológico.",
                 skills_title: "Stack Técnico",
-                other_title: "Otros Datos",
-                lang_cat: "Catalán (C1/Nativo)",
-                lang_esp: "Castellano (Nativo)",
-                lang_eng: "Inglés (Básico)",
-                forklift: "Carretillas (Hasta 10t)"
+                other_title: "Otros",
+                lang_title: "Idiomas:",
+                exp_title: "Experiencia",
+                exp_9digitz: "Soporte Técnico y Mantenimiento.",
+                exp_md: "Operaciones y logística avanzada.",
+                exp_erasmus: "Domótica, desarrollo Web HTML/CSS y entornos internacionales.",
+                exp_taf: "Servicios informáticos y redes.",
+                edu_title: "Formación",
+                edu_asix: "ASIX - Adm. de Sistemas en Red",
+                edu_smx: "CFGM SMX - Sistemas y Redes"
             },
             en: {
-                profile_title: "Professional Profile",
-                profile_text: "I am a responsible and organized person with a high learning capacity. Currently focused on network and systems administration, looking for opportunities to apply my technical knowledge and grow professionally in demanding technological environments.",
-                exp_title: "Work Experience",
-                exp_1: "IT Technician - Tordera",
-                exp_2: "Logistics Operations",
-                exp_3: "Logistics Support",
-                exp_erasmus_title: "Erasmus+ | Vitalis BMH (Germany)",
-                exp_erasmus_desc: "Specialization in Home Automation, Web Development (HTML/CSS), and systems management in an international environment.",
-                exp_taf: "Maintenance and Systems Technician",
-                edu_title: "Education",
-                edu_1: "ASIX (In Progress)",
-                edu_2: "VET in Systems & Networks",
+                tagline: "Systems & Networks",
+                about_title: "About Me",
+                about_text: "I am a responsible and organized person. My goal is to continuously learn and gain solid experience in the technology sector.",
                 skills_title: "Technical Stack",
-                other_title: "Additional Info",
-                lang_cat: "Catalan (C1/Native)",
-                lang_esp: "Spanish (Native)",
-                lang_eng: "English (Basic)",
-                forklift: "Forklift License (Up to 10t)"
+                other_title: "Others",
+                lang_title: "Languages:",
+                exp_title: "Experience",
+                exp_9digitz: "Technical Support and Maintenance.",
+                exp_md: "Advanced logistics and operations.",
+                exp_erasmus: "Home Automation, HTML/CSS Web development, and international environments.",
+                exp_taf: "IT services and networking.",
+                edu_title: "Education",
+                edu_asix: "ASIX - Network Systems Admin",
+                edu_smx: "VET Systems & Networks"
             }
         };
 
-        function changeLanguage(lang) {
-            document.querySelectorAll('[data-i18n]').forEach(element => {
-                const key = element.getAttribute('data-i18n');
-                if (translations[lang][key]) {
-                    element.textContent = translations[lang][key];
-                }
+        function setLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                el.innerText = translations[lang][key];
             });
-            
-            // Cambiar textos que no usan data-i18n específicamente
-            document.getElementById('tagline').textContent = lang === 'es' 
-                ? 'Estudiante de Administración de Sistemas Informáticos en Redes (ASIX)' 
-                : 'Network Computer Systems Administration Student (ASIX)';
+            document.getElementById('about-text').innerText = translations[lang].about_text;
         }
     </script>
 </body>
