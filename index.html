@@ -3,41 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Izan Ruiz Pérez | Systems Administrator Portfolio</title>
-    <!-- Fonts: Inter & Poppins para un look muy limpio -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+    <title>Izan Ruiz Pérez | Systems & Networks Engineer</title>
+    <!-- Google Fonts: Plus Jakarta Sans es la que usan las startups tech ahora mismo -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --primary: #00d2ff; /* Azul tech brillante */
-            --primary-glow: rgba(0, 210, 255, 0.3);
-            --bg-deep: #050a15;
-            --bg-card: #0d1425;
-            --text-white: #ffffff;
-            --text-gray: #94a3b8;
-            --border: rgba(255, 255, 255, 0.08);
+            --primary: #0070f3; /* Azul eléctrico estilo Microsoft/Next.js */
+            --bg: #000000;
+            --card-bg: #0a0a0a;
+            --border: #222;
+            --text-main: #ffffff;
+            --text-muted: #888888;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
         body {
-            background-color: var(--bg-deep);
-            color: var(--text-white);
-            line-height: 1.6;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.5;
             -webkit-font-smoothing: antialiased;
         }
-
-        /* --- Custom Scrollbar --- */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--bg-deep); }
-        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
 
         .container {
             max-width: 1200px;
@@ -45,208 +39,204 @@
             padding: 0 2rem;
         }
 
-        /* --- Header / Navbar --- */
+        /* --- MENÚ PROFESIONAL --- */
         header {
-            height: 80px;
-            display: flex;
-            align-items: center;
+            height: 70px;
+            border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
-            background: rgba(5, 10, 21, 0.8);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid var(--border);
-            z-index: 1000;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            z-index: 100;
         }
 
         .nav-content {
-            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 100%;
         }
 
-        /* Logo Profesional */
-        .logo {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.5rem;
-            letter-spacing: -1px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .logo span {
-            color: var(--primary);
-        }
-
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .btn-download {
-            background: var(--primary);
-            color: #000;
-            padding: 0.6rem 1.2rem;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 0.9rem;
+        /* Estilo de Logo mucho más Pro */
+        .brand {
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: -0.5px;
             text-decoration: none;
-            transition: all 0.3s ease;
+            color: #fff;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
-        .btn-download:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px var(--primary-glow);
-        }
-
-        .btn-lang {
-            background: transparent;
-            border: 1px solid var(--border);
-            color: var(--text-gray);
-            padding: 0.4rem 0.8rem;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.8rem;
-            transition: 0.3s;
-        }
-
-        .btn-lang:hover, .btn-lang.active {
+        .brand span {
             color: var(--primary);
-            border-color: var(--primary);
+            font-weight: 300;
         }
 
-        /* --- Hero Section --- */
-        .hero {
-            padding: 6rem 0;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
+        .nav-right {
+            display: flex;
             align-items: center;
-            gap: 4rem;
+            gap: 1.5rem;
         }
 
-        .hero-info h1 {
-            font-family: 'Poppins', sans-serif;
+        .lang-selector {
+            display: flex;
+            background: #111;
+            padding: 4px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .lang-btn {
+            padding: 4px 10px;
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: 0.2s;
+        }
+
+        .lang-btn.active {
+            background: #222;
+            color: #fff;
+        }
+
+        .btn-cv {
+            background: #fff;
+            color: #000;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-cv:hover {
+            background: var(--primary);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 80px 0;
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
             font-size: 4rem;
-            line-height: 1.1;
+            font-weight: 800;
+            letter-spacing: -2px;
+            line-height: 1;
             margin-bottom: 1.5rem;
         }
 
-        .hero-info h1 span {
-            display: block;
-            color: var(--primary);
-        }
-
-        .hero-info p {
-            font-size: 1.2rem;
-            color: var(--text-gray);
-            max-width: 500px;
+        .hero-text p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
             margin-bottom: 2rem;
         }
 
-        .hero-image {
+        .profile-wrapper {
             position: relative;
-            justify-self: end;
         }
 
-        .hero-image img {
-            width: 320px;
-            height: 400px;
+        .profile-img {
+            width: 100%;
+            height: 450px;
             object-fit: cover;
             border-radius: 24px;
+            filter: grayscale(20%);
             border: 1px solid var(--border);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
 
-        .experience-badge {
-            position: absolute;
-            bottom: -20px;
-            left: -20px;
-            background: var(--bg-card);
-            padding: 1rem 1.5rem;
-            border-radius: 16px;
-            border: 1px solid var(--border);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        /* --- Grid Layout --- */
-        .content-grid {
+        /* --- BENTO GRID --- */
+        .bento {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
-            margin-bottom: 6rem;
+            padding-bottom: 100px;
         }
 
         .card {
-            background: var(--bg-card);
+            background: var(--card-bg);
             border: 1px solid var(--border);
-            padding: 2.5rem;
             border-radius: 24px;
-            transition: 0.4s;
+            padding: 2rem;
+            transition: 0.3s;
         }
 
         .card:hover {
-            border-color: rgba(0, 210, 255, 0.4);
-            transform: translateY(-5px);
+            border-color: #333;
         }
 
-        .full-width { grid-column: span 2; }
-        .side-card { grid-column: span 1; }
+        .span-2 { grid-column: span 2; }
 
-        h2 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.5rem;
+        .card h2 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary);
             margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
-        h2 i { color: var(--primary); font-size: 1.2rem; }
+        .exp-item {
+            margin-bottom: 1.5rem;
+        }
 
-        /* --- Timeline & Lists --- */
-        .item { margin-bottom: 2rem; }
-        .item:last-child { margin-bottom: 0; }
-        .item h3 { font-size: 1.1rem; margin-bottom: 4px; }
-        .item .meta { color: var(--primary); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; }
-        .item p { color: var(--text-gray); font-size: 0.95rem; margin-top: 5px; }
+        .exp-item:last-child { margin-bottom: 0; }
 
-        .skill-group {
+        .exp-item h3 { font-size: 1.1rem; margin-bottom: 2px; }
+        .exp-item .date { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; }
+        .exp-item p { font-size: 0.95rem; color: var(--text-muted); margin-top: 4px; }
+
+        .tag-group {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
         }
 
-        .skill-tag {
-            background: rgba(255,255,255,0.03);
+        .tag {
+            background: #111;
             border: 1px solid var(--border);
-            padding: 0.4rem 0.9rem;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            color: var(--text-gray);
+            padding: 6px 12px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #eee;
         }
 
-        /* --- Footer --- */
         footer {
-            padding: 4rem 0;
+            padding: 50px 0;
             border-top: 1px solid var(--border);
             text-align: center;
-            color: var(--text-gray);
-            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-size: 0.8rem;
         }
 
-        /* --- Responsive --- */
-        @media (max-width: 1024px) {
-            .hero { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
-            .hero-info h1 { font-size: 3rem; }
-            .hero-info p { margin: 0 auto 2rem; }
-            .hero-image { justify-self: center; }
-            .content-grid { grid-template-columns: 1fr; }
-            .full-width, .side-card { grid-column: span 1; }
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            .hero { grid-template-columns: 1fr; text-align: center; padding: 40px 0; }
+            .hero-text h1 { font-size: 3rem; }
+            .hero-text p { margin: 0 auto 2rem; }
+            .profile-img { height: 350px; width: 300px; margin: 0 auto; }
+            .bento { grid-template-columns: 1fr; }
+            .span-2 { grid-column: span 1; }
         }
     </style>
 </head>
@@ -254,14 +244,16 @@
 
     <header>
         <div class="container nav-content">
-            <div class="logo">IRP<span>.</span></div>
-            <div class="nav-actions">
-                <div>
-                    <button class="btn-lang active" onclick="setLang('es', this)">ES</button>
-                    <button class="btn-lang" onclick="setLang('en', this)">EN</button>
+            <a href="#" class="brand">IZAN RUIZ <span>PÉREZ</span></a>
+            
+            <div class="nav-right">
+                <div class="lang-selector">
+                    <button class="lang-btn active" onclick="changeLang('es', this)">ES</button>
+                    <button class="lang-btn" onclick="changeLang('en', this)">EN</button>
                 </div>
-                <a href="CV_Izan_Ruiz.pdf" download class="btn-download" id="dl-btn">
-                    <i class="fas fa-file-pdf"></i> <span data-i18n="dl_cv">Descargar CV</span>
+                <!-- Nombre del archivo PDF actualizado -->
+                <a href="CV Izan Ruiz.pdf" download class="btn-cv">
+                    <i class="fas fa-download"></i> <span data-i18n="dl_btn">Descargar CV</span>
                 </a>
             </div>
         </div>
@@ -270,91 +262,89 @@
     <main class="container">
         <!-- Hero Section -->
         <section class="hero">
-            <div class="hero-info">
-                <h1 id="hero-title">Izan Ruiz<span>Pérez</span></h1>
-                <p id="hero-p">Estudiante de Sistemas Informáticos en Redes (ASIX). Especializado en infraestructura y soporte técnico.</p>
-                <div class="skill-group">
-                    <span class="skill-tag"><i class="fas fa-envelope"></i> izanrpizan@gmail.com</span>
-                    <span class="skill-tag"><i class="fas fa-phone"></i> 681 66 37 75</span>
+            <div class="hero-text">
+                <h1 data-i18n="hero_h1">Systems & Networks.</h1>
+                <p data-i18n="hero_p">Especializado en Administración de Sistemas Informáticos en Red (ASIX). Enfocado en infraestructuras críticas, virtualización y soporte técnico avanzado.</p>
+                <div class="tag-group">
+                    <span class="tag"><i class="fas fa-envelope"></i> izanrpizan@gmail.com</span>
+                    <span class="tag"><i class="fas fa-phone"></i> 681 66 37 75</span>
+                    <span class="tag"><i class="fas fa-location-dot"></i> Barcelona, ES</span>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="izan.png" alt="Izan Ruiz">
-                <div class="experience-badge">
-                    <strong style="color:var(--primary); font-size: 1.2rem; display: block;">ASIX Student</strong>
-                    <span style="font-size: 0.8rem; color: var(--text-gray);">Barcelona, ES</span>
-                </div>
+            <div class="profile-wrapper">
+                <!-- Nombre de la foto actualizado -->
+                <img src="izan.png" alt="Izan Ruiz Pérez" class="profile-img">
             </div>
         </section>
 
         <!-- Bento Grid -->
-        <div class="content-grid">
+        <div class="bento">
             <!-- Experiencia -->
-            <section class="card full-width">
+            <section class="card span-2">
                 <h2 data-i18n="title_exp"><i class="fas fa-briefcase"></i> Trayectoria Profesional</h2>
                 
-                <div class="item">
-                    <div class="meta">11/2025 — 01/2026</div>
+                <div class="exp-item">
+                    <span class="date">11/2025 — 01/2026</span>
                     <h3>9DIGITZ</h3>
-                    <p data-i18n="exp_1">Técnico de soporte y mantenimiento de sistemas en Tordera.</p>
+                    <p data-i18n="exp_1">Mantenimiento de sistemas integrales y soporte de red en entorno empresarial.</p>
                 </div>
 
-                <div class="item">
-                    <div class="meta">08/2025 — 09/2025</div>
+                <div class="exp-item">
+                    <span class="date">08/2025 — 09/2025</span>
                     <h3>Massimo Dutti Logística</h3>
-                    <p data-i18n="exp_2">Operaciones logísticas avanzadas y gestión de flujo de trabajo.</p>
+                    <p data-i18n="exp_2">Gestión de operaciones y optimización de procesos en centro logístico de gran escala.</p>
                 </div>
 
-                <div class="item">
-                    <div class="meta">2023</div>
+                <div class="exp-item">
+                    <span class="date">2023</span>
                     <h3>Erasmus+ | Vitalis BMH (Germany)</h3>
-                    <p data-i18n="exp_3">Implementación de sistemas domóticos y desarrollo de entornos web profesionales.</p>
+                    <p data-i18n="exp_3">Proyecto internacional de domótica avanzada y desarrollo de interfaces web industriales.</p>
                 </div>
             </section>
 
-            <!-- Skills -->
-            <section class="card side-card">
-                <h2 data-i18n="title_skills"><i class="fas fa-code"></i> Stack Técnico</h2>
-                <div class="skill-group">
-                    <span class="skill-tag">Cisco Packet Tracer</span>
-                    <span class="skill-tag">VirtualBox</span>
-                    <span class="skill-tag">PgAdmin (SQL)</span>
-                    <span class="skill-tag">VS Code</span>
-                    <span class="skill-tag">WordPress</span>
-                    <span class="skill-tag">AppSheet</span>
-                    <span class="skill-tag">Microsoft Office</span>
-                    <span class="skill-tag">HTML/CSS</span>
+            <!-- Stack -->
+            <section class="card">
+                <h2 data-i18n="title_stack"><i class="fas fa-code"></i> Stack Técnico</h2>
+                <div class="tag-group">
+                    <span class="tag">Cisco Packet Tracer</span>
+                    <span class="tag">VirtualBox</span>
+                    <span class="tag">Windows/Linux Server</span>
+                    <span class="tag">PgAdmin</span>
+                    <span class="tag">AppSheet</span>
+                    <span class="tag">WordPress</span>
+                    <span class="tag">VS Code</span>
+                    <span class="tag">HTML5 / CSS3</span>
                 </div>
             </section>
 
             <!-- Formación -->
-            <section class="card side-card">
+            <section class="card">
                 <h2 data-i18n="title_edu"><i class="fas fa-graduation-cap"></i> Formación</h2>
-                <div class="item">
-                    <div class="meta">2024 - Present</div>
-                    <h3 data-i18n="edu_1">Grado Superior ASIX</h3>
+                <div class="exp-item">
+                    <span class="date">2024 - ACTUAL</span>
+                    <h3 data-i18n="edu_1">GS Adm. Sistemas (ASIX)</h3>
                     <p>Inst. Sa Palomera, Blanes</p>
                 </div>
-                <div class="item">
-                    <div class="meta">2022 - 2024</div>
-                    <h3 data-i18n="edu_2">Grado Medio SMX</h3>
+                <div class="exp-item">
+                    <span class="date">2022 - 2024</span>
+                    <h3 data-i18n="edu_2">GM Sistemas (SMX)</h3>
                     <p>Inst. Lluís Companys, Tordera</p>
                 </div>
             </section>
 
             <!-- Otros -->
-            <section class="card full-width">
-                <h2 data-i18n="title_other"><i class="fas fa-info-circle"></i> Información Adicional</h2>
+            <section class="card span-2">
+                <h2 data-i18n="title_other"><i class="fas fa-id-card"></i> Credenciales y Aptitudes</h2>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
                     <div>
-                        <h3 style="font-size: 0.9rem; color: var(--primary); margin-bottom: 10px;">LICENCIAS</h3>
-                        <p style="color: white;"><i class="fas fa-car"></i> Carnet de conducir B y A2</p>
-                        <p style="color: white;"><i class="fas fa-truck-pickup"></i> Operador Carretillas (10t)</p>
+                        <h4 style="margin-bottom:10px; font-size:0.9rem;">Licencias</h4>
+                        <p style="font-size:0.9rem; color:var(--text-muted);"><i class="fas fa-car"></i> Carnet de conducir B y A2</p>
+                        <p style="font-size:0.9rem; color:var(--text-muted);"><i class="fas fa-truck-ramp-box"></i> Operador Carretillas (10t)</p>
                     </div>
                     <div>
-                        <h3 style="font-size: 0.9rem; color: var(--primary); margin-bottom: 10px;">IDIOMAS</h3>
-                        <p style="color: white;">Catalán/Castellano (Nativo)</p>
-                        <p style="color: white;">Inglés (Nivel Técnico)</p>
+                        <h4 style="margin-bottom:10px; font-size:0.9rem;">Idiomas</h4>
+                        <p style="font-size:0.9rem; color:var(--text-muted);">Catalán & Castellano (Nativo)</p>
+                        <p style="font-size:0.9rem; color:var(--text-muted);">Inglés (Nivel Técnico)</p>
                     </div>
                 </div>
             </section>
@@ -362,52 +352,51 @@
     </main>
 
     <footer>
-        <p>© 2024 IZAN RUIZ PÉREZ • Systems & Networks Portfolio</p>
+        <div class="container">
+            <p>© 2024 Izan Ruiz Pérez • Portfolio Profesional</p>
+        </div>
     </footer>
 
     <script>
-        const langData = {
+        const texts = {
             es: {
-                dl_cv: "Descargar CV",
-                hero_p: "Estudiante de Sistemas Informáticos en Redes (ASIX). Especializado en infraestructura y soporte técnico.",
+                dl_btn: "Descargar CV",
+                hero_h1: "Systems & Networks.",
+                hero_p: "Especializado en Administración de Sistemas Informáticos en Red (ASIX). Enfocado en infraestructuras críticas, virtualización y soporte técnico avanzado.",
                 title_exp: "Trayectoria Profesional",
-                exp_1: "Técnico de soporte y mantenimiento de sistemas en Tordera.",
-                exp_2: "Operaciones logísticas avanzadas y gestión de flujo de trabajo.",
-                exp_3: "Implementación de sistemas domóticos y desarrollo de entornos web profesionales.",
-                title_skills: "Stack Técnico",
+                exp_1: "Mantenimiento de sistemas integrales y soporte de red en entorno empresarial.",
+                exp_2: "Gestión de operaciones y optimización de procesos en centro logístico de gran escala.",
+                exp_3: "Proyecto internacional de domótica avanzada y desarrollo de interfaces web industriales.",
+                title_stack: "Stack Técnico",
                 title_edu: "Formación",
-                edu_1: "Grado Superior ASIX",
-                edu_2: "Grado Medio SMX",
-                title_other: "Información Adicional"
+                edu_1: "GS Adm. Sistemas (ASIX)",
+                edu_2: "GM Sistemas (SMX)",
+                title_other: "Credenciales y Aptitudes"
             },
             en: {
-                dl_cv: "Download CV",
-                hero_p: "Network Computing Systems student (ASIX). Specialized in infrastructure and technical support.",
-                title_exp: "Work Experience",
-                exp_1: "System support and maintenance technician in Tordera.",
-                exp_2: "Advanced logistics operations and workflow management.",
-                exp_3: "Implementation of home automation systems and professional web development.",
-                title_skills: "Technical Stack",
+                dl_btn: "Download CV",
+                hero_h1: "Systems & Networks.",
+                hero_p: "Specialized in Network Computer Systems Administration (ASIX). Focused on critical infrastructure, virtualization, and advanced technical support.",
+                title_exp: "Professional Journey",
+                exp_1: "Comprehensive systems maintenance and network support in a business environment.",
+                exp_2: "Operations management and process optimization in a large-scale logistics center.",
+                exp_3: "International project on advanced home automation and industrial web interface development.",
+                title_stack: "Technical Stack",
                 title_edu: "Education",
-                edu_1: "Advanced Degree in ASIX",
-                edu_2: "Vocational Degree in SMX",
-                title_other: "Additional Info"
+                edu_1: "Advanced Degree (ASIX)",
+                edu_2: "Vocational Degree (SMX)",
+                title_other: "Credentials & Skills"
             }
         };
 
-        function setLang(lang, btn) {
-            // Cambiar botones activos
-            document.querySelectorAll('.btn-lang').forEach(b => b.classList.remove('active'));
+        function changeLang(lang, btn) {
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
-            // Traducir
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
-                el.innerText = langData[lang][key];
+                el.innerText = texts[lang][key];
             });
-
-            // Especiales
-            document.getElementById('hero-p').innerText = langData[lang].hero_p;
         }
     </script>
 </body>
