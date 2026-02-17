@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Izan Ruiz Pérez</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Encabezado */
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #007bff 3px solid;
+        }
+
+        header h1 {
+            text-align: center;
+            margin: 0;
+            padding-bottom: 10px;
+            color: #fff;
+            font-size: 2.5em;
+        }
+
+        header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        header .personal-info {
+            text-align: right;
+        }
+
+        header .personal-info h2 {
+            margin: 0;
+            color: #fff;
+            font-size: 1.8em;
+        }
+
+        header .personal-info p {
+            margin: 5px 0;
+            font-size: 1.1em;
+            color: #ccc;
+        }
+
+        /* Sección principal */
+        section {
+            padding: 30px 0;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2em;
+            border-bottom: 2px solid #007bff;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* Acerca de mí */
+        .about-me .container {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+        }
+
+        .about-me .profile-text {
+            flex: 1;
+        }
+
+        .about-me .profile-text h3 {
+            margin-top: 0;
+            color: #007bff;
+        }
+
+        /* Formación académica */
+        .education .education-item {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .education .education-item h3 {
+            margin-top: 0;
+            color: #007bff;
+        }
+
+        .education .education-item .period {
+            font-weight: bold;
+            color: #555;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Experiencia laboral */
+        .experience .experience-item {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .experience .experience-item h3 {
+            margin-top: 0;
+            color: #007bff;
+        }
+
+        .experience .experience-item .period {
+            font-weight: bold;
+            color: #555;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .experience .experience-item ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+
+        /* Habilidades */
+        .skills .skills-list {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .skills .skills-list span {
+            background: #e9ecef;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            color: #495057;
+        }
+
+        /* Idiomas */
+        .languages .languages-list {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .languages .languages-list div {
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .languages .languages-list .native {
+            background: #d4edda;
+            color: #155724;
+            font-weight: bold;
+        }
+
+        .languages .languages-list .intermediate {
+            background: #fff3cd;
+            color: #856404;
+            font-weight: bold;
+        }
+
+        .languages .languages-list .basic {
+            background: #f8d7da;
+            color: #721c24;
+            font-weight: bold;
+        }
+
+        /* Licencias */
+        .licenses .licenses-list {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .licenses .licenses-list p {
+            margin-bottom: 10px;
+        }
+
+        /* Pie de página */
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            color: #fff;
+            background-color: #333;
+        }
+
+        footer a {
+            color: #fff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            header .profile-pic {
+                margin-bottom: 15px;
+            }
+
+            header .personal-info {
+                text-align: center;
+            }
+
+            .about-me .container {
+                flex-direction: column;
+            }
+
+            .skills .skills-list,
+            .languages .languages-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <img src="https://via.placeholder.com/150/CCCCCC/FFFFFF?text=IZAN+RUIZ" alt="Foto de Izan Ruiz Pérez" class="profile-pic">
+            <div class="personal-info">
+                <h1>IZAN RUIZ PÉREZ</h1>
+                <p>Fecha de nacimiento: 30/03/2006 en Barcelona</p>
+                <p>Dirección: C/. Catalunya n°83, Tordera, Ben</p>
+                <p>Teléfono: 681 66 37 75</p>
+                <p>Email: <a href="mailto:izanrpizan@gmail.com">izanrpizan@gmail.com</a></p>
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2>Objetivo Profesional</h2>
+            <div class="about-me">
+                <div class="profile-text">
+                    <p>Soy responsable y organizado, me gustaría trabajar para aprender, formarme y ganar experiencia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2>Formación Académica</h2>
+            <div class="education">
+                <div class="education-item">
+                    <h3>ESO</h3>
+                    <span class="period">Septiembre 2018 - Junio 2022</span>
+                    <p>Escola Brianxa, Tordera.</p>
+                </div>
+                <div class="education-item">
+                    <h3>Curso Premonitor</h3>
+                    <span class="period">Marzo 2023</span>
+                    <p>Casal de joves de Tordera.</p>
+                </div>
+                <div class="education-item">
+                    <h3>CFGM Sistemas Microinformáticos y Redes</h3>
+                    <span class="period">Septiembre 2022 - Mayo 2024</span>
+                    <p>Institut LLuis Companys, Tordera.</p>
+                </div>
+                <div class="education-item">
+                    <h3>Administración de Sistemas Informáticos en Redes (ASIX)</h3>
+                    <span class="period">Septiembre 2024 - En curso</span>
+                    <p>Instituto Sa Palomera, Blanes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2>Experiencia Laboral</h2>
+            <div class="experience">
+                <div class="experience-item">
+                    <h3>Taf Serveis Informática</h3>
+                    <span class="period">15/05/23 - 30/06/23</span>
+                    <p>Pineda de Mar.</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Erasmus +, Vitalis BMH (Alemania)</h3>
+                    <span class="period">10/07/23 - 28/07/23</span>
+                    <p>Schkeuditz, Alemania.</p>
+                    <ul>
+                        <li>Domótica</li>
+                        <li>Código de páginas web (HTML)</li>
+                        <li>Creación de CSS</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>Taf Serveis Informática</h3>
+                    <span class="period">20/09/23 - 05/12/23</span>
+                    <p>Pineda de Mar.</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Bershka Logistica, S.A</h3>
+                    <span class="period">25/06/24 - 03/08/24</span>
+                    <p>Palafolls.</p>
+                    <ul>
+                        <li>Cubrir temporalmente una baja médica</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>Punt Tordera, S.L</h3>
+                    <span class="period">28/10/24 - 07/01/25</span>
+                    <p>Tordera.</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Massimo Dutti Logistica, S.A</h3>
+                    <span class="period">01/08/25 - 14/09/25</span>
+                    <p>Tordera.</p>
+                </div>
+                <div class="experience-item">
+                    <h3>9DIGITZ</h3>
+                    <span class="period">17/11/25 - 29/01/26</span>
+                    <p>Tordera.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Conocimientos</h2>
+            <div class="skills-list">
+                <span>Excel</span>
+                <span>Word</span>
+                <span>Drive</span>
+                <span>Power Point</span>
+                <span>VirtualBox</span>
+                <span>Cisco Packet Tracer</span>
+                <span>Wordpress</span>
+                <span>Access</span>
+                <span>Appsheet</span>
+                <span>Visual Studio Code</span>
+                <span>PgAdmin</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="languages">
+        <div class="container">
+            <h2>Idiomas</h2>
+            <div class="languages-list">
+                <div>
+                    Catalán: <span class="native">Lengua Materna - C1</span>
+                </div>
+                <div>
+                    Castellano: <span class="native">Lengua Materna</span>
+                </div>
+                <div>
+                    Inglés: <span class="basic">Nivel bajo</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="licenses">
+        <div class="container">
+            <h2>Licencias y Carnets</h2>
+            <div class="licenses-list">
+                <p>Carnet de Conducir tipo B y A2</p>
+                <p>Carnet de operador de carretillas de manutención hasta 10.000 kg.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Izan Ruiz Pérez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
