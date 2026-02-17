@@ -3,348 +3,327 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Izan Ruiz Pérez | Systems & Networks Engineer</title>
-    <!-- Google Fonts: Plus Jakarta Sans es la que usan las startups tech ahora mismo -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Iconos -->
+    <title>Izan Ruiz | Systems & Networks</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --primary: #0070f3; /* Azul eléctrico estilo Microsoft/Next.js */
-            --bg: #000000;
-            --card-bg: #0a0a0a;
-            --border: #222;
-            --text-main: #ffffff;
-            --text-muted: #888888;
+            --accent: #00a3ff;
+            --bg: #050505;
+            --card: #0f0f0f;
+            --border: #1a1a1a;
+            --text: #ffffff;
+            --text-dim: #a1a1a1;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
             background-color: var(--bg);
-            color: var(--text-main);
-            line-height: 1.5;
+            color: var(--text);
+            line-height: 1.6;
             -webkit-font-smoothing: antialiased;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
         }
 
         /* --- MENÚ PROFESIONAL --- */
         header {
-            height: 70px;
-            border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
-            background: rgba(0,0,0,0.8);
-            backdrop-filter: saturate(180%) blur(20px);
-            z-index: 100;
+            z-index: 1000;
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            height: 70px;
         }
 
-        .nav-content {
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
             height: 100%;
+            padding: 0 2rem;
         }
 
-        /* Estilo de Logo mucho más Pro */
+        /* Logo refinado */
         .brand {
+            font-size: 1.1rem;
             font-weight: 800;
-            font-size: 1.2rem;
-            letter-spacing: -0.5px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             text-decoration: none;
-            color: #fff;
+            color: var(--text);
             display: flex;
             align-items: center;
-            gap: 8px;
         }
 
         .brand span {
-            color: var(--primary);
             font-weight: 300;
+            color: var(--text-dim);
+            margin-left: 6px;
         }
 
         .nav-right {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
-        .lang-selector {
+        .lang-toggle {
             display: flex;
-            background: #111;
-            padding: 4px;
-            border-radius: 8px;
-            border: 1px solid var(--border);
+            gap: 10px;
         }
 
-        .lang-btn {
-            padding: 4px 10px;
+        .lang-toggle button {
+            background: none;
             border: none;
-            background: transparent;
-            color: var(--text-muted);
+            color: var(--text-dim);
             font-size: 0.75rem;
             font-weight: 600;
             cursor: pointer;
-            border-radius: 6px;
-            transition: 0.2s;
+            transition: 0.3s;
         }
 
-        .lang-btn.active {
-            background: #222;
-            color: #fff;
+        .lang-toggle button.active {
+            color: var(--accent);
         }
 
         .btn-cv {
-            background: #fff;
-            color: #000;
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-size: 0.85rem;
+            background: var(--text);
+            color: var(--bg);
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 0.8rem;
             font-weight: 700;
-            transition: 0.2s;
+            text-decoration: none;
+            transition: 0.3s;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
         .btn-cv:hover {
-            background: var(--primary);
-            color: #fff;
-            transform: translateY(-1px);
+            background: var(--accent);
+            color: white;
+            transform: translateY(-2px);
         }
 
-        /* --- HERO SECTION --- */
+        /* --- HERO --- */
         .hero {
-            padding: 80px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
             display: grid;
-            grid-template-columns: 1fr 350px;
+            grid-template-columns: 1fr 400px;
             gap: 4rem;
             align-items: center;
         }
 
-        .hero-text h1 {
-            font-size: 4rem;
+        .hero-content h1 {
+            font-size: 4.5rem;
             font-weight: 800;
-            letter-spacing: -2px;
-            line-height: 1;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-text p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            max-width: 600px;
+            line-height: 0.9;
+            letter-spacing: -3px;
             margin-bottom: 2rem;
         }
 
-        .profile-wrapper {
-            position: relative;
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            max-width: 550px;
+            margin-bottom: 2.5rem;
         }
 
         .profile-img {
             width: 100%;
-            height: 450px;
+            height: 500px;
             object-fit: cover;
-            border-radius: 24px;
-            filter: grayscale(20%);
+            border-radius: 20px;
             border: 1px solid var(--border);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
         }
 
         /* --- BENTO GRID --- */
-        .bento {
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem 100px;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
-            padding-bottom: 100px;
         }
 
         .card {
-            background: var(--card-bg);
+            background: var(--card);
             border: 1px solid var(--border);
+            padding: 2.5rem;
             border-radius: 24px;
-            padding: 2rem;
-            transition: 0.3s;
+            transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1);
         }
 
         .card:hover {
             border-color: #333;
+            transform: translateY(-5px);
         }
 
         .span-2 { grid-column: span 2; }
 
-        .card h2 {
-            font-size: 0.9rem;
+        h2 {
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+            color: var(--accent);
+            margin-bottom: 2rem;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        .exp-item {
-            margin-bottom: 1.5rem;
-        }
+        .item { margin-bottom: 2rem; }
+        .item:last-child { margin-bottom: 0; }
+        .item h3 { font-size: 1.2rem; margin-bottom: 5px; }
+        .item .date { font-size: 0.8rem; color: var(--accent); font-weight: 600; }
+        .item p { color: var(--text-dim); font-size: 0.95rem; margin-top: 5px; }
 
-        .exp-item:last-child { margin-bottom: 0; }
-
-        .exp-item h3 { font-size: 1.1rem; margin-bottom: 2px; }
-        .exp-item .date { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; }
-        .exp-item p { font-size: 0.95rem; color: var(--text-muted); margin-top: 4px; }
-
-        .tag-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
+        .tags { display: flex; flex-wrap: wrap; gap: 8px; }
         .tag {
-            background: #111;
+            background: #151515;
             border: 1px solid var(--border);
             padding: 6px 12px;
-            border-radius: 10px;
+            border-radius: 8px;
             font-size: 0.8rem;
-            font-weight: 500;
-            color: #eee;
+            color: var(--text-dim);
         }
 
         footer {
-            padding: 50px 0;
-            border-top: 1px solid var(--border);
             text-align: center;
-            color: var(--text-muted);
+            padding: 60px 0;
+            border-top: 1px solid var(--border);
+            color: var(--text-dim);
             font-size: 0.8rem;
         }
 
-        /* --- RESPONSIVE --- */
+        /* --- MOBILE --- */
         @media (max-width: 900px) {
-            .hero { grid-template-columns: 1fr; text-align: center; padding: 40px 0; }
-            .hero-text h1 { font-size: 3rem; }
-            .hero-text p { margin: 0 auto 2rem; }
-            .profile-img { height: 350px; width: 300px; margin: 0 auto; }
-            .bento { grid-template-columns: 1fr; }
+            .hero { grid-template-columns: 1fr; text-align: center; padding: 3rem 1.5rem; }
+            .hero-content h1 { font-size: 3rem; }
+            .profile-img { height: 350px; width: 100%; max-width: 350px; margin: 0 auto; }
+            .container { grid-template-columns: 1fr; }
             .span-2 { grid-column: span 1; }
+            .nav-right { gap: 1rem; }
+            .brand span { display: none; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="container nav-content">
-            <a href="#" class="brand">IZAN RUIZ <span>PÉREZ</span></a>
+        <div class="nav-container">
+            <a href="#" class="brand">IZAN <span>RUIZ PÉREZ</span></a>
             
             <div class="nav-right">
-                <div class="lang-selector">
-                    <button class="lang-btn active" onclick="changeLang('es', this)">ES</button>
-                    <button class="lang-btn" onclick="changeLang('en', this)">EN</button>
+                <div class="lang-toggle">
+                    <button id="es-btn" class="active" onclick="setLang('es')">ES</button>
+                    <button id="en-btn" onclick="setLang('en')">EN</button>
                 </div>
-                <!-- Nombre del archivo PDF actualizado -->
-                <a href="CV Izan Ruiz.pdf" download class="btn-cv">
-                    <i class="fas fa-download"></i> <span data-i18n="dl_btn">Descargar CV</span>
+                <!-- ENLACE ACTUALIZADO CON EL NOMBRE EXACTO -->
+                <a href="CV Izan Ruiz.docx - Documents de Google.pdf" download class="btn-cv">
+                    <i class="fas fa-arrow-down-to-line"></i> <span data-i18n="cv_btn">Descargar CV</span>
                 </a>
             </div>
         </div>
     </header>
 
-    <main class="container">
-        <!-- Hero Section -->
+    <main>
         <section class="hero">
-            <div class="hero-text">
-                <h1 data-i18n="hero_h1">Systems & Networks.</h1>
-                <p data-i18n="hero_p">Especializado en Administración de Sistemas Informáticos en Red (ASIX). Enfocado en infraestructuras críticas, virtualización y soporte técnico avanzado.</p>
-                <div class="tag-group">
+            <div class="hero-content">
+                <h1 data-i18n="h1">SYSTEMS &<br>NETWORKS.</h1>
+                <p data-i18n="p">Especializado en la administración de sistemas informáticos en red (ASIX). Enfocado en el diseño de infraestructuras, virtualización y optimización de servicios IT.</p>
+                <div class="tags">
                     <span class="tag"><i class="fas fa-envelope"></i> izanrpizan@gmail.com</span>
                     <span class="tag"><i class="fas fa-phone"></i> 681 66 37 75</span>
                     <span class="tag"><i class="fas fa-location-dot"></i> Barcelona, ES</span>
                 </div>
             </div>
-            <div class="profile-wrapper">
-                <!-- Nombre de la foto actualizado -->
-                <img src="izan.png" alt="Izan Ruiz Pérez" class="profile-img">
+            <div class="hero-image">
+                <img src="izan.png" alt="Izan Ruiz" class="profile-img">
             </div>
         </section>
 
-        <!-- Bento Grid -->
-        <div class="bento">
-            <!-- Experiencia -->
+        <div class="container">
+            <!-- EXPERIENCIA -->
             <section class="card span-2">
-                <h2 data-i18n="title_exp"><i class="fas fa-briefcase"></i> Trayectoria Profesional</h2>
+                <h2 data-i18n="title_exp"><i class="fas fa-code-branch"></i> Experiencia Profesional</h2>
                 
-                <div class="exp-item">
-                    <span class="date">11/2025 — 01/2026</span>
+                <div class="item">
+                    <span class="date">2025 — 2026</span>
                     <h3>9DIGITZ</h3>
-                    <p data-i18n="exp_1">Mantenimiento de sistemas integrales y soporte de red en entorno empresarial.</p>
+                    <p data-i18n="exp_1">Mantenimiento preventivo y correctivo de sistemas. Gestión de soporte técnico avanzado.</p>
                 </div>
 
-                <div class="exp-item">
-                    <span class="date">08/2025 — 09/2025</span>
+                <div class="item">
+                    <span class="date">2025</span>
                     <h3>Massimo Dutti Logística</h3>
-                    <p data-i18n="exp_2">Gestión de operaciones y optimización de procesos en centro logístico de gran escala.</p>
+                    <p data-i18n="exp_2">Operativa de sistemas logísticos y gestión de infraestructuras críticas de distribución.</p>
                 </div>
 
-                <div class="exp-item">
+                <div class="item">
                     <span class="date">2023</span>
-                    <h3>Erasmus+ | Vitalis BMH (Germany)</h3>
-                    <p data-i18n="exp_3">Proyecto internacional de domótica avanzada y desarrollo de interfaces web industriales.</p>
+                    <h3>Erasmus+ | Vitalis BMH (Alemania)</h3>
+                    <p data-i18n="exp_3">Desarrollo de proyectos de automatización (domótica) y despliegue de interfaces web industriales.</p>
                 </div>
             </section>
 
-            <!-- Stack -->
+            <!-- STACK -->
             <section class="card">
-                <h2 data-i18n="title_stack"><i class="fas fa-code"></i> Stack Técnico</h2>
-                <div class="tag-group">
+                <h2 data-i18n="title_stack"><i class="fas fa-layer-group"></i> Stack Técnico</h2>
+                <div class="tags">
                     <span class="tag">Cisco Packet Tracer</span>
                     <span class="tag">VirtualBox</span>
-                    <span class="tag">Windows/Linux Server</span>
-                    <span class="tag">PgAdmin</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">Linux/Windows Server</span>
+                    <span class="tag">PgAdmin (SQL)</span>
                     <span class="tag">AppSheet</span>
-                    <span class="tag">WordPress</span>
                     <span class="tag">VS Code</span>
-                    <span class="tag">HTML5 / CSS3</span>
+                    <span class="tag">WordPress</span>
                 </div>
             </section>
 
-            <!-- Formación -->
+            <!-- EDUCACIÓN -->
             <section class="card">
-                <h2 data-i18n="title_edu"><i class="fas fa-graduation-cap"></i> Formación</h2>
-                <div class="exp-item">
-                    <span class="date">2024 - ACTUAL</span>
-                    <h3 data-i18n="edu_1">GS Adm. Sistemas (ASIX)</h3>
+                <h2 data-i18n="title_edu"><i class="fas fa-academic-cap"></i> Educación</h2>
+                <div class="item">
+                    <span class="date">ACTUAL</span>
+                    <h3 data-i18n="edu_1">Grado Superior ASIX</h3>
                     <p>Inst. Sa Palomera, Blanes</p>
                 </div>
-                <div class="exp-item">
-                    <span class="date">2022 - 2024</span>
-                    <h3 data-i18n="edu_2">GM Sistemas (SMX)</h3>
+                <div class="item">
+                    <span class="date">2022 — 2024</span>
+                    <h3 data-i18n="edu_2">Grado Medio SMX</h3>
                     <p>Inst. Lluís Companys, Tordera</p>
                 </div>
             </section>
 
-            <!-- Otros -->
+            <!-- INFO EXTRA -->
             <section class="card span-2">
-                <h2 data-i18n="title_other"><i class="fas fa-id-card"></i> Credenciales y Aptitudes</h2>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <h2 data-i18n="title_extra"><i class="fas fa-plus"></i> Información Complementaria</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
                     <div>
                         <h4 style="margin-bottom:10px; font-size:0.9rem;">Licencias</h4>
-                        <p style="font-size:0.9rem; color:var(--text-muted);"><i class="fas fa-car"></i> Carnet de conducir B y A2</p>
-                        <p style="font-size:0.9rem; color:var(--text-muted);"><i class="fas fa-truck-ramp-box"></i> Operador Carretillas (10t)</p>
+                        <p style="color:var(--text-dim); font-size:0.9rem;">• Carnet Conducir B y A2</p>
+                        <p style="color:var(--text-dim); font-size:0.9rem;">• Operador Carretillas (10t)</p>
                     </div>
                     <div>
                         <h4 style="margin-bottom:10px; font-size:0.9rem;">Idiomas</h4>
-                        <p style="font-size:0.9rem; color:var(--text-muted);">Catalán & Castellano (Nativo)</p>
-                        <p style="font-size:0.9rem; color:var(--text-muted);">Inglés (Nivel Técnico)</p>
+                        <p style="color:var(--text-dim); font-size:0.9rem;">• Catalán & Castellano (Nativo)</p>
+                        <p style="color:var(--text-dim); font-size:0.9rem;">• Inglés (Technical Level)</p>
                     </div>
                 </div>
             </section>
@@ -352,51 +331,49 @@
     </main>
 
     <footer>
-        <div class="container">
-            <p>© 2024 Izan Ruiz Pérez • Portfolio Profesional</p>
-        </div>
+        <p>© 2024 IZAN RUIZ PÉREZ • Systems & Networks Portfolio</p>
     </footer>
 
     <script>
-        const texts = {
+        const translations = {
             es: {
-                dl_btn: "Descargar CV",
-                hero_h1: "Systems & Networks.",
-                hero_p: "Especializado en Administración de Sistemas Informáticos en Red (ASIX). Enfocado en infraestructuras críticas, virtualización y soporte técnico avanzado.",
-                title_exp: "Trayectoria Profesional",
-                exp_1: "Mantenimiento de sistemas integrales y soporte de red en entorno empresarial.",
-                exp_2: "Gestión de operaciones y optimización de procesos en centro logístico de gran escala.",
-                exp_3: "Proyecto internacional de domótica avanzada y desarrollo de interfaces web industriales.",
+                cv_btn: "Descargar CV",
+                h1: "SYSTEMS &<br>NETWORKS.",
+                p: "Especializado en la administración de sistemas informáticos en red (ASIX). Enfocado en el diseño de infraestructuras, virtualización y optimización de servicios IT.",
+                title_exp: "Experiencia Profesional",
+                exp_1: "Mantenimiento preventivo y correctivo de sistemas. Gestión de soporte técnico avanzado.",
+                exp_2: "Operativa de sistemas logísticos y gestión de infraestructuras críticas de distribución.",
+                exp_3: "Desarrollo de proyectos de automatización (domótica) y despliegue de interfaces web industriales.",
                 title_stack: "Stack Técnico",
-                title_edu: "Formación",
-                edu_1: "GS Adm. Sistemas (ASIX)",
-                edu_2: "GM Sistemas (SMX)",
-                title_other: "Credenciales y Aptitudes"
+                title_edu: "Educación",
+                edu_1: "Grado Superior ASIX",
+                edu_2: "Grado Medio SMX",
+                title_extra: "Información Complementaria"
             },
             en: {
-                dl_btn: "Download CV",
-                hero_h1: "Systems & Networks.",
-                hero_p: "Specialized in Network Computer Systems Administration (ASIX). Focused on critical infrastructure, virtualization, and advanced technical support.",
-                title_exp: "Professional Journey",
-                exp_1: "Comprehensive systems maintenance and network support in a business environment.",
-                exp_2: "Operations management and process optimization in a large-scale logistics center.",
-                exp_3: "International project on advanced home automation and industrial web interface development.",
+                cv_btn: "Download CV",
+                h1: "SYSTEMS &<br>NETWORKS.",
+                p: "Specialized in Network Computer Systems Administration (ASIX). Focused on infrastructure design, virtualization, and IT services optimization.",
+                title_exp: "Professional Experience",
+                exp_1: "Preventive and corrective system maintenance. Advanced technical support management.",
+                exp_2: "Logistics systems operations and management of critical distribution infrastructures.",
+                exp_3: "Development of automation projects (domotics) and deployment of industrial web interfaces.",
                 title_stack: "Technical Stack",
                 title_edu: "Education",
-                edu_1: "Advanced Degree (ASIX)",
+                edu_1: "Higher Degree (ASIX)",
                 edu_2: "Vocational Degree (SMX)",
-                title_other: "Credentials & Skills"
+                title_extra: "Additional Information"
             }
         };
 
-        function changeLang(lang, btn) {
-            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
+        function setLang(lang) {
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
-                el.innerText = texts[lang][key];
+                el.innerHTML = translations[lang][key];
             });
+
+            document.getElementById('es-btn').classList.toggle('active', lang === 'es');
+            document.getElementById('en-btn').classList.toggle('active', lang === 'en');
         }
     </script>
 </body>
