@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Izan Ruiz Pérez | Portfolio Profesional</title>
-    <!-- Fuentes premium: Inter para legibilidad y Outfit para títulos -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <title>Izan Ruiz Pérez | Systems & Networks</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -14,29 +13,19 @@
             --bg: #020617;
             --card: #0f172a;
             --border: #1e293b;
-            --text: #f8fafc;
+            --text: #ffffff;
             --text-muted: #94a3b8;
         }
 
-        * {
-            margin: 0; padding: 0; box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
 
-        body {
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
+        body { background-color: var(--bg); color: var(--text); line-height: 1.6; scroll-behavior: smooth; }
 
-        /* --- MENÚ SUPERIOR (NUEVO DISEÑO) --- */
+        /* --- HEADER --- */
         header {
             position: sticky; top: 0; z-index: 1000;
-            background: rgba(2, 6, 23, 0.85);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border);
-            height: 85px;
+            background: rgba(2, 6, 23, 0.9); backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border); height: 80px;
         }
 
         .nav-container {
@@ -45,142 +34,89 @@
             height: 100%; padding: 0 2rem;
         }
 
-        /* Estilo Nuevo: Logo Minimalista con barra vertical */
+        /* Nombre en blanco fuerte y limpio */
         .brand-logo {
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            color: var(--text);
+            color: #ffffff;
             font-family: 'Outfit', sans-serif;
-        }
-
-        .brand-logo .initials {
             font-weight: 900;
             font-size: 1.4rem;
-            letter-spacing: -1px;
-            color: var(--accent);
-            padding-right: 15px;
-            border-right: 2px solid var(--border);
-            margin-right: 15px;
-        }
-
-        .brand-logo .full-name {
-            font-weight: 400;
-            font-size: 1rem;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             text-transform: uppercase;
         }
 
-        .brand-logo .full-name strong {
-            font-weight: 800;
-        }
-
-        .nav-right { display: flex; align-items: center; gap: 2.5rem; }
+        .nav-right { display: flex; align-items: center; gap: 2rem; }
 
         .lang-group {
-            display: flex;
-            gap: 5px;
-            background: #111827;
-            padding: 4px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
+            display: flex; gap: 5px; background: #111827;
+            padding: 4px; border-radius: 12px; border: 1px solid var(--border);
         }
 
         .lang-btn {
             background: none; border: none; color: var(--text-muted);
-            font-size: 0.65rem; font-weight: 800; cursor: pointer;
+            font-size: 0.7rem; font-weight: 800; cursor: pointer;
             padding: 6px 12px; border-radius: 8px; transition: 0.3s;
         }
 
         .lang-btn.active { background: var(--accent); color: white; }
 
-        .btn-cv {
-            background: white; color: black; text-decoration: none;
-            padding: 12px 24px; border-radius: 14px;
-            font-size: 0.85rem; font-weight: 800;
-            transition: 0.3s; display: flex; align-items: center; gap: 10px;
-        }
-
-        .btn-cv:hover { transform: translateY(-2px); background: var(--accent); color: white; box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2); }
-
         /* --- HERO --- */
         .hero {
-            max-width: 1200px; margin: 5rem auto;
+            max-width: 1200px; margin: 4rem auto;
             padding: 0 2rem; display: grid;
-            grid-template-columns: 1fr 400px; gap: 5rem; align-items: center;
+            grid-template-columns: 1fr 400px; gap: 4rem; align-items: center;
         }
 
         .hero-info h1 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 4.8rem; font-weight: 900; line-height: 0.9;
-            margin-bottom: 2rem; letter-spacing: -4px;
+            font-family: 'Outfit', sans-serif; font-size: 4.5rem;
+            font-weight: 900; line-height: 0.9; margin-bottom: 1.5rem; letter-spacing: -3px;
         }
 
-        .hero-info p {
-            font-size: 1.3rem; color: var(--text-muted);
-            max-width: 600px; margin-bottom: 3rem; font-weight: 300;
-        }
+        .hero-info p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2.5rem; }
 
         .hero-image img {
-            width: 100%; height: 550px;
-            object-fit: cover; border-radius: 40px;
-            border: 1px solid var(--border);
-            box-shadow: 0 50px 100px -20px rgba(0,0,0,0.6);
+            width: 100%; height: 500px; object-fit: cover;
+            border-radius: 40px; border: 1px solid var(--border);
         }
 
-        /* --- GRID PRINCIPAL --- */
-        .container {
-            max-width: 1200px; margin: 0 auto 100px;
-            padding: 0 2rem; display: grid;
-            grid-template-columns: repeat(3, 1fr); gap: 2rem;
-        }
-
-        .card {
-            background: var(--card); border: 1px solid var(--border);
-            padding: 3rem; border-radius: 40px;
-            transition: 0.4s;
-        }
-
-        .card:hover { border-color: #334155; transform: translateY(-10px); }
+        /* --- SECCIONES --- */
+        .container { max-width: 1200px; margin: 0 auto 80px; padding: 0 2rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .card { background: var(--card); border: 1px solid var(--border); padding: 3rem; border-radius: 40px; transition: 0.4s; }
         .span-2 { grid-column: span 2; }
+        .span-3 { grid-column: span 3; }
+        h2 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 4px; color: var(--accent); margin-bottom: 2.5rem; font-weight: 800; display: flex; align-items: center; gap: 15px; }
 
-        h2 {
-            font-size: 0.75rem; text-transform: uppercase;
-            letter-spacing: 4px; color: var(--accent);
-            margin-bottom: 3rem; display: flex; align-items: center; gap: 15px;
-            font-weight: 800;
+        /* --- CONTACT FORM --- */
+        .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .contact-form input, .contact-form textarea {
+            width: 100%; padding: 15px; background: #1e293b; border: 1px solid var(--border);
+            border-radius: 12px; color: white; font-size: 1rem; outline: none;
         }
+        .contact-form textarea { grid-column: span 2; height: 150px; resize: none; }
+        .btn-submit {
+            grid-column: span 2; background: var(--accent); color: white; border: none;
+            padding: 15px; border-radius: 12px; font-weight: 800; cursor: pointer; transition: 0.3s;
+        }
+        .btn-submit:hover { transform: scale(1.02); filter: brightness(1.1); }
 
         /* --- TIMELINE --- */
-        .timeline { border-left: 1px solid var(--border); padding-left: 2.5rem; }
-        .work-item { position: relative; margin-bottom: 3.5rem; }
-        .work-item::before {
-            content: ""; position: absolute; left: calc(-2.5rem - 5px);
-            top: 10px; width: 10px; height: 10px;
-            background: var(--accent); border-radius: 50%;
-            box-shadow: 0 0 15px var(--accent);
-        }
+        .timeline { border-left: 1px solid var(--border); padding-left: 2rem; }
+        .work-item { position: relative; margin-bottom: 2.5rem; }
+        .work-item::before { content: ""; position: absolute; left: calc(-2rem - 5px); top: 10px; width: 10px; height: 10px; background: var(--accent); border-radius: 50%; }
+        .work-item .meta { font-size: 0.8rem; color: var(--accent); font-weight: 800; display: block; margin-bottom: 5px; }
+        .tags { display: flex; flex-wrap: wrap; gap: 10px; }
+        .tag { background: rgba(255,255,255,0.03); border: 1px solid var(--border); padding: 8px 16px; border-radius: 12px; font-size: 0.85rem; }
 
-        .work-item h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 5px; }
-        .work-item .meta { font-size: 0.85rem; color: var(--accent); font-weight: 800; margin-bottom: 8px; display: block; text-transform: uppercase; }
-        .work-item p { font-size: 1rem; color: var(--text-muted); }
+        footer { padding: 50px 0; text-align: center; color: var(--text-muted); font-size: 0.8rem; border-top: 1px solid var(--border); }
 
-        .tags { display: flex; flex-wrap: wrap; gap: 12px; }
-        .tag {
-            background: rgba(255,255,255,0.03); border: 1px solid var(--border);
-            padding: 10px 18px; border-radius: 14px;
-            font-size: 0.85rem; color: var(--text); font-weight: 500;
-        }
-
-        footer { padding: 80px 0; text-align: center; color: var(--text-muted); font-size: 0.8rem; border-top: 1px solid var(--border); letter-spacing: 1px; }
-
-        @media (max-width: 1100px) {
-            .hero { grid-template-columns: 1fr; text-align: center; margin: 3rem auto; }
+        @media (max-width: 1000px) {
+            .hero { grid-template-columns: 1fr; text-align: center; }
             .hero-info h1 { font-size: 3.5rem; }
-            .hero-info p { margin: 0 auto 3rem; }
-            .hero-image img { height: 450px; width: 350px; margin: 0 auto; }
+            .hero-image img { width: 280px; height: 350px; margin: 0 auto; }
             .container { grid-template-columns: 1fr; }
-            .span-2 { grid-column: span 1; }
+            .span-2, .span-3 { grid-column: span 1; }
+            .contact-form { grid-template-columns: 1fr; }
+            .contact-form textarea, .btn-submit { grid-column: span 1; }
         }
     </style>
 </head>
@@ -188,20 +124,15 @@
 
     <header>
         <div class="nav-container">
-            <a href="#" class="brand-logo">
-                <div class="initials">IRP</div>
-                <div class="full-name">Izan <strong>Ruiz Pérez</strong></div>
-            </a>
-            
+            <a href="#" class="brand-logo">IZAN RUIZ PÉREZ</a>
             <div class="nav-right">
                 <div class="lang-group">
                     <button id="btn-es" class="lang-btn active" onclick="setLang('es')">ES</button>
                     <button id="btn-ca" class="lang-btn" onclick="setLang('ca')">CA</button>
                     <button id="btn-en" class="lang-btn" onclick="setLang('en')">EN</button>
                 </div>
-                <!-- Nombre del CV según captura anterior -->
-                <a href="CV Izan Ruiz.docx - Documents de Google.pdf" download class="btn-cv">
-                    <i class="fas fa-cloud-download-alt"></i> <span data-i18n="cv_btn">Descargar CV</span>
+                <a href="CV Izan Ruiz.docx - Documents de Google.pdf" download class="btn-cv" style="background: white; color: black; padding: 10px 20px; border-radius: 10px; font-weight: 800; text-decoration: none;">
+                    <i class="fas fa-download"></i> CV
                 </a>
             </div>
         </div>
@@ -211,11 +142,10 @@
         <section class="hero">
             <div class="hero-info">
                 <h1 data-i18n="h1">SYSTEMS &<br>NETWORKS.</h1>
-                <p data-i18n="p">Especializado en Administración de Sistemas Informáticos en Red (ASIX). Enfocado en arquitecturas de sistemas, soporte avanzado y optimización de infraestructuras críticas.</p>
+                <p data-i18n="p">Especializado en Administración de Sistemas Informáticos en Red (ASIX). Enfocado en infraestructuras y soporte avanzado.</p>
                 <div class="tags">
+                    <span class="tag"><i class="fas fa-location-dot"></i> Tordera, Barcelona</span>
                     <span class="tag"><i class="fas fa-envelope"></i> izanrpizan@gmail.com</span>
-                    <span class="tag"><i class="fas fa-phone"></i> 681 66 37 75</span>
-                    <span class="tag"><i class="fas fa-map-marker-alt"></i> Barcelona, ES</span>
                 </div>
             </div>
             <div class="hero-image">
@@ -224,149 +154,86 @@
         </section>
 
         <div class="container">
-            <!-- EXPERIENCIA LABORAL -->
             <section class="card span-2">
-                <h2 data-i18n="title_exp"><i class="fas fa-briefcase"></i> Trayectoria Profesional</h2>
+                <h2 data-i18n="title_exp"><i class="fas fa-briefcase"></i> Experiencia Laboral</h2>
                 <div class="timeline">
-                    <div class="work-item">
-                        <span class="meta">17/11/25 — 29/01/26</span>
-                        <h3>9DIGITZ</h3>
-                        <p>Tordera</p>
-                    </div>
-                    <div class="work-item">
-                        <span class="meta">01/08/25 — 14/09/25</span>
-                        <h3>Massimo Dutti Logistica, S.A</h3>
-                        <p>Tordera</p>
-                    </div>
-                    <div class="work-item">
-                        <span class="meta">28/10/24 — 07/01/25</span>
-                        <h3>Punt Tordera, S.L</h3>
-                        <p>Tordera</p>
-                    </div>
-                    <div class="work-item">
-                        <span class="meta">25/06/24 — 03/08/24</span>
-                        <h3>Bershka Logistica, S.A</h3>
-                        <p data-i18n="exp_bershka">Palafolls • Sustitución temporal por baja médica.</p>
-                    </div>
-                    <div class="work-item">
-                        <span class="meta">20/09/23 — 05/12/23</span>
-                        <h3>Taf Serveis Informática</h3>
-                        <p>Pineda de Mar</p>
-                    </div>
-                    <div class="work-item">
-                        <span class="meta">10/07/23 — 28/07/23</span>
-                        <h3>Erasmus+ | Vitalis BMH</h3>
-                        <p data-i18n="exp_erasmus">Schkeuditz, Alemania • Domótica, Desarrollo Web (HTML/CSS).</p>
-                    </div>
-                    <div class="work-item">
-                        <span class="meta">15/05/23 — 30/06/23</span>
-                        <h3>Taf Serveis Informática</h3>
-                        <p>Pineda de Mar</p>
-                    </div>
+                    <div class="work-item"><span class="meta">17/11/25 — 29/01/26</span><h3>9DIGITZ</h3><p>Tordera</p></div>
+                    <div class="work-item"><span class="meta">01/08/25 — 14/09/25</span><h3>Massimo Dutti Logistica, S.A</h3><p>Tordera</p></div>
+                    <div class="work-item"><span class="meta">25/06/24 — 03/08/24</span><h3>Bershka Logistica</h3><p data-i18n="exp_bershka">Palafolls • Sustitución temporal.</p></div>
+                    <div class="work-item"><span class="meta">10/07/23 — 28/07/23</span><h3>Erasmus+ | Vitalis BMH</h3><p data-i18n="exp_erasmus">Alemania • Domótica y Web.</p></div>
                 </div>
             </section>
 
-            <!-- STACK -->
             <section class="card">
-                <h2 data-i18n="title_skills"><i class="fas fa-layer-group"></i> Stack Técnico</h2>
+                <h2 data-i18n="title_skills"><i class="fas fa-layer-group"></i> Stack</h2>
                 <div class="tags">
-                    <span class="tag">Cisco Packet Tracer</span>
-                    <span class="tag">VirtualBox</span>
-                    <span class="tag">Linux/Windows Server</span>
-                    <span class="tag">PgAdmin (SQL)</span>
-                    <span class="tag">AppSheet</span>
-                    <span class="tag">WordPress</span>
-                    <span class="tag">VS Code</span>
-                    <span class="tag">HTML5 / CSS3</span>
+                    <span class="tag">Cisco</span> <span class="tag">VirtualBox</span> <span class="tag">SQL</span>
+                    <span class="tag">Linux</span> <span class="tag">Windows Server</span> <span class="tag">Docker</span>
                 </div>
             </section>
 
-            <!-- EDUCACIÓN -->
-            <section class="card">
-                <h2 data-i18n="title_edu"><i class="fas fa-graduation-cap"></i> Educación</h2>
-                <div class="work-item">
-                    <span class="meta">ACTUAL</span>
-                    <h3 data-i18n="edu_1">GS Adm. Sistemas (ASIX)</h3>
-                    <p>Inst. Sa Palomera, Blanes</p>
-                </div>
-                <div class="work-item">
-                    <span class="meta">2022 — 2024</span>
-                    <h3 data-i18n="edu_2">GM Sistemas (SMX)</h3>
-                    <p>Inst. Lluís Companys, Tordera</p>
-                </div>
-            </section>
+            <!-- SECCIÓN DE CONTACTO -->
+            <section class="card span-3" id="contact">
+                <h2 data-i18n="title_contact"><i class="fas fa-paper-plane"></i> Contacto</h2>
+                <form action="https://formsubmit.co/izanrpizan@gmail.com" method="POST" class="contact-form">
+                    <!-- Configuración de FormSubmit -->
+                    <input type="hidden" name="_subject" value="Nuevo mensaje desde tu Portfolio!">
+                    <input type="hidden" name="_next" value="https://tu-sitio.com/gracias.html">
+                    <input type="hidden" name="_captcha" value="false">
 
-            <!-- INFO ADICIONAL -->
-            <section class="card span-2">
-                <h2 data-i18n="title_other"><i class="fas fa-info-circle"></i> Info Adicional</h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem;">
-                    <div>
-                        <!-- CORREGIDO: Título de Licencias ahora se traduce -->
-                        <h4 style="margin-bottom:12px; font-weight:800; font-size: 0.9rem;" data-i18n="licenses_title">LICENCIAS</h4>
-                        <p style="color:var(--text-muted); font-size: 0.95rem;">• Carnet de conducir B y A2</p>
-                        <p style="color:var(--text-muted); font-size: 0.95rem;">• Operador Carretillas (10t)</p>
-                    </div>
-                    <div>
-                        <h4 style="margin-bottom:12px; font-weight:800; font-size: 0.9rem;" data-i18n="lang_title">IDIOMAS</h4>
-                        <p style="color:var(--text-muted); font-size: 0.95rem;">• Català (Natiu / C1)</p>
-                        <p style="color:var(--text-muted); font-size: 0.95rem;">• Castellano (Nativo)</p>
-                        <p style="color:var(--text-muted); font-size: 0.95rem;">• English (Technical)</p>
-                    </div>
-                </div>
+                    <input type="text" name="name" placeholder="Tu Nombre" required data-i18n-placeholder="form_name">
+                    <input type="email" name="email" placeholder="Tu Correo" required data-i18n-placeholder="form_email">
+                    <textarea name="message" placeholder="Tu Mensaje..." required data-i18n-placeholder="form_msg"></textarea>
+                    <button type="submit" class="btn-submit" data-i18n="form_btn">Enviar Mensaje</button>
+                </form>
             </section>
         </div>
     </main>
 
     <footer>
-        <p>© 2024 IZAN RUIZ PÉREZ • Systems Engineering Portfolio</p>
+        <p>© 2024 IZAN RUIZ PÉREZ • Tordera, Barcelona</p>
     </footer>
 
     <script>
         const texts = {
             es: {
-                cv_btn: "Descargar CV",
                 h1: "SYSTEMS &<br>NETWORKS.",
-                p: "Especializado en Administración de Sistemas Informáticos en Red (ASIX). Enfocado en arquitecturas de sistemas, soporte avanzado y optimización de infraestructuras críticas.",
-                title_exp: "Trayectoria Profesional",
-                exp_bershka: "Palafolls • Sustitución temporal por baja médica.",
-                exp_erasmus: "Schkeuditz, Alemania • Domótica, Desarrollo Web (HTML/CSS).",
+                p: "Especializado en Administración de Sistemas Informáticos en Red (ASIX). Enfocado en infraestructuras y soporte avanzado de Tordera.",
+                title_exp: "Experiencia Laboral",
+                exp_bershka: "Palafolls • Sustitución temporal.",
+                exp_erasmus: "Alemania • Domótica y Web.",
                 title_skills: "Stack Técnico",
-                title_edu: "Educación",
-                edu_1: "GS Adm. Sistemas (ASIX)",
-                edu_2: "GM Sistemas (SMX)",
-                title_other: "Info Adicional",
-                licenses_title: "LICENCIAS",
-                lang_title: "IDIOMAS"
+                title_contact: "Contacto",
+                form_name: "Tu Nombre",
+                form_email: "Tu Correo",
+                form_msg: "Tu Mensaje...",
+                form_btn: "Enviar Mensaje"
             },
             ca: {
-                cv_btn: "Descarregar CV",
                 h1: "SYSTEMS &<br>NETWORKS.",
-                p: "Especialitzat en Administració de Sistemes Informàtics en Xarxa (ASIX). Enfocat en arquitectures de sistemes, suport avançat i optimització d'infraestructures crítiques.",
+                p: "Especialitzat en Administració de Sistemes Informàtics en Xarxa (ASIX). Enfocat en infraestructures i suport avançat de Tordera.",
                 title_exp: "Experiència Laboral",
-                exp_bershka: "Palafolls • Substitució temporal per baixa mèdica.",
-                exp_erasmus: "Schkeuditz, Alemanya • Domòtica, Desenvolupament Web (HTML/CSS).",
+                exp_bershka: "Palafolls • Substitució temporal.",
+                exp_erasmus: "Alemanya • Domòtica i Web.",
                 title_skills: "Stack Tècnic",
-                title_edu: "Educació",
-                edu_1: "GS Adm. Sistemes (ASIX)",
-                edu_2: "GM Sistemes (SMX)",
-                title_other: "Info Addicional",
-                licenses_title: "LLICÈNCIES",
-                lang_title: "IDIOMES"
+                title_contact: "Contacte",
+                form_name: "El teu Nom",
+                form_email: "El teu Correu",
+                form_msg: "El teu Missatge...",
+                form_btn: "Enviar Missatge"
             },
             en: {
-                cv_btn: "Download CV",
                 h1: "SYSTEMS &<br>NETWORKS.",
-                p: "Specialized in Network Computer Systems Administration (ASIX). Focused on systems architecture, advanced support, and critical infrastructure optimization.",
+                p: "Specialized in Network Computer Systems Administration (ASIX). Focused on infrastructure and advanced support from Tordera.",
                 title_exp: "Work Experience",
-                exp_bershka: "Palafolls • Temporary medical leave cover.",
-                exp_erasmus: "Schkeuditz, Germany • Domotics, Web Development (HTML/CSS).",
+                exp_bershka: "Palafolls • Temporary substitution.",
+                exp_erasmus: "Germany • Domotics and Web.",
                 title_skills: "Technical Stack",
-                title_edu: "Education",
-                edu_1: "Higher Degree (ASIX)",
-                edu_2: "Vocational Degree (SMX)",
-                title_other: "Additional Info",
-                licenses_title: "LICENSES",
-                lang_title: "LANGUAGES"
+                title_contact: "Contact",
+                form_name: "Your Name",
+                form_email: "Your Email",
+                form_msg: "Your Message...",
+                form_btn: "Send Message"
             }
         };
 
@@ -376,6 +243,10 @@
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 el.innerHTML = texts[lang][key];
+            });
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                el.placeholder = texts[lang][key];
             });
         }
     </script>
