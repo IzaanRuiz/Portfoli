@@ -77,20 +77,22 @@
         .tag { background: rgba(255,255,255,0.03); border: 1px solid var(--border); padding: 10px 18px; border-radius: 14px; font-size: 0.85rem; display: flex; align-items: center; gap: 10px; }
         .tag i { color: var(--accent); }
 
-        /* --- FORMULARIO FORMSUBMIT --- */
-        .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+        /* --- NUEVO FORMULARIO PROFESIONAL --- */
+        .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .contact-form .input-group { display: flex; flex-direction: column; gap: 8px; }
+        .contact-form label { font-size: 0.8rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; }
         .contact-form input, .contact-form textarea {
             width: 100%; padding: 18px; background: #000; border: 1px solid var(--border);
             border-radius: 15px; color: white; font-size: 1rem; outline: none; transition: 0.3s;
         }
-        .contact-form input:focus, .contact-form textarea:focus { border-color: var(--accent); }
+        .contact-form input:focus, .contact-form textarea:focus { border-color: var(--accent); background: #0a0a0a; }
         .contact-form textarea { grid-column: span 2; height: 150px; resize: none; }
         .btn-submit { 
-            grid-column: span 2; background: white; color: black; border: none; padding: 18px; 
+            grid-column: span 2; background: white; color: black; border: none; padding: 20px; 
             border-radius: 15px; font-weight: 900; cursor: pointer; transition: 0.3s; font-size: 1rem;
-            text-transform: uppercase;
+            text-transform: uppercase; letter-spacing: 1px; margin-top: 10px;
         }
-        .btn-submit:hover { background: var(--accent); color: white; transform: translateY(-3px); }
+        .btn-submit:hover { background: var(--accent); color: white; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3); }
 
         footer { padding: 60px 0; text-align: center; color: var(--text-muted); border-top: 1px solid var(--border); font-size: 0.85rem; }
 
@@ -140,7 +142,7 @@
         </section>
 
         <div class="container">
-            <!-- EXPERIENCIA LABORAL COMPLETA (7 Puestos) -->
+            <!-- EXPERIENCIA LABORAL COMPLETA -->
             <section class="card span-2">
                 <h2 data-i18n="title_exp"><i class="fas fa-history"></i> Experiencia Laboral</h2>
                 <div class="timeline">
@@ -192,18 +194,29 @@
                 </div>
             </section>
 
-            <!-- FORMULARIO DE CONTACTO (FORMSUBMIT) -->
+            <!-- SECCIÓN DE CONTACTO ACTUALIZADA -->
             <section class="card span-3" id="contact">
                 <h2 data-i18n="title_contact"><i class="fas fa-paper-plane"></i> Contacto Directo</h2>
                 <form action="https://formsubmit.co/izanrpizan@gmail.com" method="POST" class="contact-form">
-                    <!-- Configuración invisible de FormSubmit -->
+                    <!-- Configuración FormSubmit -->
                     <input type="hidden" name="_next" value="https://izaanruiz.github.io/Portfoli/">
-                    <input type="hidden" name="_subject" value="Nuevo contacto desde Portfolio Izan">
+                    <input type="hidden" name="_subject" value="Nuevo contacto desde Portfolio">
+                    <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_captcha" value="false">
 
-                    <input type="text" name="name" required placeholder="Nombre Completo" data-i18n-placeholder="f_name">
-                    <input type="email" name="email" required placeholder="Tu Correo Electrónico" data-i18n-placeholder="f_email">
-                    <textarea name="message" required placeholder="¿En qué puedo ayudarte?" data-i18n-placeholder="f_msg"></textarea>
+                    <div class="input-group">
+                        <label data-i18n="f_name">Nombre Completo</label>
+                        <input type="text" name="name" required placeholder="Ej: Juan Pérez">
+                    </div>
+                    <div class="input-group">
+                        <label data-i18n="f_email">Correo Electrónico</label>
+                        <input type="email" name="email" required placeholder="tu@email.com">
+                    </div>
+                    <div class="input-group" style="grid-column: span 2;">
+                        <label data-i18n="f_msg">Mensaje</label>
+                        <textarea name="message" required placeholder="Escribe aquí tu mensaje..."></textarea>
+                    </div>
+                    
                     <button type="submit" class="btn-submit" data-i18n="f_btn">Enviar Mensaje</button>
                 </form>
             </section>
@@ -232,8 +245,8 @@
                 lic_title: "LICENCIAS",
                 title_contact: "Contacto Directo",
                 f_name: "Nombre Completo",
-                f_email: "Tu Correo Electrónico",
-                f_msg: "¿En qué puedo ayudarte?",
+                f_email: "Correo Electrónico",
+                f_msg: "Mensaje",
                 f_btn: "Enviar Mensaje"
             },
             ca: {
@@ -252,8 +265,8 @@
                 lic_title: "LLICÈNCIES",
                 title_contact: "Contacte Directe",
                 f_name: "Nom Complet",
-                f_email: "El teu Correu Electrònic",
-                f_msg: "En què puc ajudar-te?",
+                f_email: "Correu Electrònic",
+                f_msg: "Missatge",
                 f_btn: "Enviar Missatge"
             },
             en: {
@@ -272,8 +285,8 @@
                 lic_title: "LICENSES",
                 title_contact: "Direct Contact",
                 f_name: "Full Name",
-                f_email: "Your Email Address",
-                f_msg: "How can I help you?",
+                f_email: "Email Address",
+                f_msg: "Message",
                 f_btn: "Send Message"
             }
         };
