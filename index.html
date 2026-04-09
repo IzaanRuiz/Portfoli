@@ -63,7 +63,7 @@
         
         h2 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; color: var(--accent); margin-bottom: 2.5rem; font-weight: 800; display: flex; align-items: center; gap: 12px; }
 
-        /* --- TIMELINES --- */
+        /* --- ITEMS --- */
         .timeline { border-left: 1px solid var(--border); padding-left: 2rem; }
         .item { position: relative; margin-bottom: 2.5rem; }
         .item::before { content: ""; position: absolute; left: calc(-2rem - 5.5px); top: 10px; width: 11px; height: 11px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent); }
@@ -71,7 +71,6 @@
         .item h3 { font-size: 1.2rem; font-weight: 700; margin-top: 2px; }
         .item p { font-size: 0.95rem; color: var(--text-muted); }
 
-        /* --- TAGS --- */
         .tags { display: flex; flex-wrap: wrap; gap: 10px; }
         .tag { background: rgba(255,255,255,0.03); border: 1px solid var(--border); padding: 10px 18px; border-radius: 14px; font-size: 0.85rem; display: flex; align-items: center; gap: 10px; }
         .tag i { color: var(--accent); }
@@ -152,19 +151,6 @@
 
         <div class="container">
             
-            <!-- SECCIÓN DE PROYECTOS (NUEVA) -->
-            <section class="card span-3">
-                <h2 data-i18n="title_projects"><i class="fas fa-terminal"></i> Proyectos Destacados</h2>
-                <div class="project-content">
-                    <span class="project-meta">Collaboration: Adrià Rodríguez & Youssef Fouad</span>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">NoSQLPaTi</h3>
-                    <p data-i18n="project_1_desc" style="color: var(--text-muted); max-width: 800px;">Proyecto especializado en la implementación y gestión de bases de datos NoSQL. Análisis de escalabilidad, modelado de datos no relacionales y optimización de consultas para entornos distribuidos.</p>
-                    <a href="https://github.com/adriiiii/NoSQLPaTi" target="_blank" class="btn-project">
-                        <i class="fab fa-github"></i> <span data-i18n="view_project">Ver Proyecto en GitHub</span>
-                    </a>
-                </div>
-            </section>
-
             <!-- EXPERIENCIA LABORAL -->
             <section class="card span-2">
                 <h2 data-i18n="title_exp"><i class="fas fa-history"></i> Experiencia Laboral</h2>
@@ -217,6 +203,19 @@
                 </div>
             </section>
 
+            <!-- SECCIÓN DE PROYECTO (MOVIDA AQUÍ) -->
+            <section class="card span-3">
+                <h2 data-i18n="title_projects"><i class="fas fa-terminal"></i> Proyecto</h2>
+                <div class="project-content">
+                    <span class="project-meta">Collaboration: Adrià Rodríguez & Youssef Fouad</span>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">NoSQLPaTi</h3>
+                    <p data-i18n="project_1_desc" style="color: var(--text-muted); max-width: 800px;">Proyecto especializado en la implementación y gestión de bases de datos NoSQL. Análisis de escalabilidad, modelado de datos no relacionales y optimización de consultas para entornos distribuidos.</p>
+                    <a href="https://github.com/adriiiii/NoSQLPaTi" target="_blank" class="btn-project">
+                        <i class="fab fa-github"></i> <span data-i18n="view_project">Ver Proyecto en GitHub</span>
+                    </a>
+                </div>
+            </section>
+
             <!-- CONTACTO -->
             <section class="card span-3" id="contact">
                 <h2 data-i18n="title_contact"><i class="fas fa-paper-plane"></i> Contacto Directo</h2>
@@ -246,7 +245,7 @@
     </main>
 
     <footer>
-        <p>© 2024 IZAN RUIZ PÉREZ • Tordera, Barcelona</p>
+        <p>© IZAN RUIZ PÉREZ • Tordera, Barcelona</p>
     </footer>
 
     <script>
@@ -254,7 +253,7 @@
             es: {
                 h1: "SYSTEMS &<br>NETWORKS.",
                 p: "Administración de Sistemas Informáticos en Red (ASIX). Especialista en soporte técnico avanzado y gestión de infraestructuras en Tordera.",
-                title_projects: "Proyectos Destacados",
+                title_projects: "Proyecto",
                 project_1_desc: "Proyecto especializado en la implementación y gestión de bases de datos NoSQL. Análisis de escalabilidad, modelado de datos no relacionales y optimización de consultas para entornos distribuidos.",
                 view_project: "Ver Proyecto en GitHub",
                 title_exp: "Experiencia Laboral",
@@ -277,7 +276,7 @@
             ca: {
                 h1: "SYSTEMS &<br>NETWORKS.",
                 p: "Administració de Sistemes Informàtics en Xarxa (ASIX). Especialista en suport tècnic avançat i gestió d'infraestructures a Tordera.",
-                title_projects: "Projectes Destacats",
+                title_projects: "Projecte",
                 project_1_desc: "Projecte especialitzat en la implementació i gestió de bases de dades NoSQL. Anàlisi d'escalabilitat, modelatge de dades no relacionals i optimització de consultes per a entorns distribuïts.",
                 view_project: "Veure Projecte a GitHub",
                 title_exp: "Experiència Laboral",
@@ -300,7 +299,7 @@
             en: {
                 h1: "SYSTEMS &<br>NETWORKS.",
                 p: "Network Systems Administration (ASIX). Specialized in technical support and infrastructure management in Tordera.",
-                title_projects: "Featured Projects",
+                title_projects: "Project",
                 project_1_desc: "Project specialized in the implementation and management of NoSQL databases. Scalability analysis, non-relational data modeling, and query optimization for distributed environments.",
                 view_project: "View Project on GitHub",
                 title_exp: "Work Experience",
